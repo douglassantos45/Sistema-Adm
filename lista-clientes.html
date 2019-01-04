@@ -1,0 +1,385 @@
+
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../../../favicon.ico">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.css">
+
+    <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.quicksearch/2.3.1/jquery.quicksearch.js"></script>
+
+    <title>SISCOOP</title>
+
+    <!-- Principal CSS do Bootstrap -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+
+    <!-- Estilos customizados para esse template -->
+      <!-- Estilos customizados para esse template -->
+    <link href="css/dashboard.css" rel="stylesheet">
+  </head>
+
+  <body>
+
+<!-- Ínicio Barra Navegação 
+====================================-->   
+    <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
+      <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">SISCOOP</a>
+      <ul class="navbar-nav px-3">
+         <li class="nav-item text-nowrap">
+          <div id="header">
+                Bem-vindo
+                <strong> Usuário</strong>.
+              <a href="index.html">Sair<span data-feather="log-out" style="margin-left: 4px;"></span></a>
+        </div>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+        <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+          <div class="sidebar-sticky">
+            <ul class="nav flex-column">
+
+                <span class="d-none d-lg-block">
+                  <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="http://julhomenes.000webhostapp.com/Sisteminha/img/001.jpg" alt="" style="position: center;" width="58">
+                </span>
+
+
+              <li class="nav-item">
+                <a class="nav-link " href="cadastro-produto.html">
+                  <span data-feather="folder-plus"></span>
+                  Cadastro
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link " href="lista-produtos.html">
+                  <span data-feather="shopping-cart"></span>
+                  Produtos
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="lista-clientes.html">
+                  <span data-feather="users"></span>
+                  Clientes<span class="sr-only">(atual)</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="vendas.html">
+                  <span data-feather="credit-card"></span>
+                  Vendas
+                </a>
+              </li>
+              <li class="nav-item ">
+                <a class="nav-link "  href="controle-vendas.html">
+                  <span data-feather="activity"></span>
+                  Controle de Vendas
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span data-feather="trash"></span>
+                  Descartes
+                </a>
+              </li>
+            </ul>
+
+            <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+              <span>Relatórios salvos</span>
+              <a class="d-flex align-items-center text-muted" href="#">
+                <span data-feather="save"></span>
+              </a>
+            </h6>
+             <ul class="nav flex-column mb-2">
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span data-feather="file-text"></span>
+                  Essa Semana
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span data-feather="file-text"></span>
+                  Neste mês
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span data-feather="file-text"></span>
+                  Último trimestre
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span data-feather="file-text"></span>
+                  Vendas do final de ano
+                </a>
+              </li>
+            </ul>
+          </div>
+        </nav><!-- Fim Barra Navegação 
+======================================-->   
+
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+          <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+            <h1 class="h2">Lista de Clientes</h1>
+            <div class="btn-toolbar mb-2 mb-md-0">
+
+              <input class="btn btn-sm btn-outline-secondary" type="date" id="txt_consulta" id="tabela" name="consulta" aria-label="Search">
+                <!--<span data-feather="calendar"></span>
+                11/20/2018-->
+
+            </div>
+          </div>
+
+
+<!-- Tabela de Clientes
+====================================-->
+     <div class="form-group input-group">
+      <div class="form-inline my-2 my-lg-0 top_search input-group-addon input-group-btn">
+        <label>Pesquisar: </label>
+        <input type="text" name="consulta" class="form-control mr-sm" placeholder="Pesquisar..." id="txt_consulta" aria-label="Search">
+        <span class="input-group-btn">
+          <button class="btn btn-default" type="button">Go!</button>
+        </span>
+      </div>
+      </div>
+
+      <table class="table table-striped projects table-sm table-edit" id="tabela">
+        <thead>
+          <tr>
+            <th style="width: 7%">ID</th>
+            <th style="width: 20%">Usuário:</th>
+            <th>Produto:</th>
+            <th>Quantidade:</th>
+            <th>Contato:</th>
+            <th>Data:</th>
+            <th>Status</th>
+            <th style="width: 15%" class="right">#Editar</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>46566</td>
+            <td>
+              <a>João Carlos Batista</a>
+              <br />
+              <small>Bonfim - BA</small>
+            </td>
+            <td>
+              <a>Leite de Vaca</a>
+            </td>
+            <td class="project_progress">
+              <a>06</a>
+              <br />
+              <small>l - Litros</small>
+            </td>
+            <td class="project_progress">
+              <a>(74) 9 9168-8546</a>
+              <br />
+              <small>joaocbatista@gmail.com</small>
+            </td>
+            <td>
+              <a>02/06/2018</a>
+              <br />
+              <small>Às 08:00 horas</small>
+            </td>
+            <td>
+              <button type="button" class="btn btn-success btn-xs text-uppercase mudar" id="mudar" onclick="mudarSituacao()"> pago </button>
+            </td>
+            <td class="right">
+              <a href="att-clientes.html" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i> Editar </a>
+              <a href="#" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Deletar </a>
+            </td>
+          </tr>
+          <tr class="white">
+            <td>46566</td>
+            <td>
+              <a>João Carlos Batista</a>
+              <br />
+              <small>Bonfim - BA</small>
+            </td>
+            <td>
+              <a>Carne Suína</a>
+              </td>
+            <td class="project_progress">
+              <a>23</a>
+              <br />
+              <small>kg - Quilograma</small>
+            </td>
+            <td class="project_progress">
+              <a>(74) 9 9168-8546</a>
+              <br />
+              <small>joaocbatista@gmail.com</small>
+            </td>
+
+             <td>
+              <a>02/04/2018</a>
+              <br />
+              <small>Às 08:00 horas</small>
+            </td>
+            
+            <td>
+              <button type="button" class="btn btn-secondary btn-xs text-uppercase mudar" id="mudar" onclick="mudarSituacao()"> à pagar </button>
+            </td>
+            <td class="right">
+              <a href="att-clientes.html" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i> Editar </a>
+              <a href="#" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Deletar </a>
+            </td>
+          </tr>
+
+           <tr>
+            <td>46566</td>
+            <td>
+              <a>Maria Silva Batista</a>
+              <br />
+              <small>Bonfim - BA</small>
+            </td>
+            <td>
+              <a>Ovos de Codorna</a>
+              </td>
+            <td class="project_progress">
+              <a>12</a>
+              <br />
+              <small>u - Unidade</small>
+            </td>
+            <td class="project_progress">
+              <a>(74) 9 9168-8546</a>
+              <br />
+              <small>mariasilvabatista@gmail.com</small>
+            </td>
+             <td>
+              <a>12/06/2018</a>
+              <br />
+              <small>Às 08:00 horas</small>
+            </td>
+            <td>
+              <button type="button" class="btn btn-success btn-xs text-uppercase"> pago </button>
+            </td>
+            <td class="right">
+              <a href="att-clientes.html" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i> Editar </a>
+              <a href="#" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Deletar </a>
+            </td>
+          </tr>
+
+        </tbody>
+</table><!-- Fim tabela Clientes
+===============================-->
+
+        <script>
+            $('input#txt_consulta').quicksearch('table#tabela tbody tr');
+        </script>
+
+
+<!-- Ínicio Modal
+============================== -->
+
+
+<!-- Botão para acionar modal
+===========================================
+ data-toggle="modal" data-target="#modalExemplo"
+==============================================
+ -->
+
+<!-- Modal -->
+<div class="modal fade" id="modalExemplo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Excluir Cliente</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        DESEJA DELETAR OS DADOS?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-salvar btn-sm" data-dismiss="modal">Fechar</button>
+        <button type="button" class="btn btn-excluir btn-sm">Deletar</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Fim Modal
+=================================-->
+
+
+    <script type="text/javascript">
+      
+      function mudarSituacao () {
+        document.getElementById('mudar').style;
+
+        let valorCampo = document.getElementById('mudar').value//Passando o valor do id campo para a variável 
+
+            //length conta a quantidade de letras
+            if ( valorCampo.length < 3 ) {
+
+                document.getElementById('mudar').style.background = "red"
+
+            } else {
+
+                document.getElementById('mudar').style.background = "green"
+            }
+      }
+
+    </script>
+
+
+    <!-- Ícones -->
+    <script src="js/feather.js"></script>
+    <script>
+      feather.replace()
+    </script>
+
+    <!-- Principal JavaScript do Bootstrap
+    ================================================== -->
+    <!-- Foi colocado no final para a página carregar mais rápido -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/vendor/holder.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.quicksearch/2.3.1/jquery.quicksearch.js"></script>
+
+    <script>
+      var ctx = document.getElementById("myChart");
+      var myChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+          datasets: [{
+            data: [15339, 21345, 18483, 24003, 23489, 24092, 12034],
+            lineTension: 0,
+            backgroundColor: 'transparent',
+            borderColor: '#007bff',
+            borderWidth: 4,
+            pointBackgroundColor: '#007bff'
+          }]
+        },
+        options: {
+          scales: {
+            yAxes: [{
+              ticks: {
+                beginAtZero: false
+              }
+            }]
+          },
+          legend: {
+            display: false,
+          }
+        }
+      });
+    </script>
+  </body>
+</html>
+

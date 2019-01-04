@@ -1,0 +1,447 @@
+
+
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../../../favicon.ico">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.css">
+
+
+    <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.quicksearch/2.3.1/jquery.quicksearch.js"></script>
+
+
+    <!-- Styles -->
+    <!-- Principal CSS do Bootstrap -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+
+    <!-- Estilos customizados para esse template -->
+    <link href="css/dashboard.css" rel="stylesheet">
+
+
+    <title>SISCOOP</title>
+
+    
+  </head>
+
+  <body>
+
+
+<!-- Ínicio Barra Navegação 
+====================================-->
+    <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
+      <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">SISCOOP</a>
+      <ul class="navbar-nav px-3">
+         <li class="nav-item text-nowrap">
+          <div id="header">
+                Bem-vindo
+                <strong> Usuário</strong>.
+              <a href="index.html">Sair<span data-feather="log-out" style="margin-left: 4px;"></span></a>
+        </div>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+        <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+          <div class="sidebar-sticky">
+            <ul class="nav flex-column">
+
+             <span class="d-none d-lg-block">
+                  <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="http://julhomenes.000webhostapp.com/Sisteminha/img/001.jpg" alt="" style="position: center;" width="58">
+                </span>
+
+              <li class="nav-item">
+                <a class="nav-link " href="cadastro-produto.html">
+                  <span data-feather="folder-plus"></span>
+                  Cadastro
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link " href="lista-produtos.html">
+                  <span data-feather="shopping-cart"></span>
+                  Produtos
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="lista-clientes.html">
+                  <span data-feather="users"></span>
+                  Clientes
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="vendas.html">
+                  <span data-feather="credit-card"></span>
+                  Vendas
+                </a>
+              </li>
+              <li class="nav-item ">
+                <a class="nav-link active"  href="controle-vendas.html">
+                  <span data-feather="activity"></span>
+                  Controle de Vendas<span class="sr-only">(atual)</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span data-feather="trash"></span>
+                  Descartes
+                </a>
+              </li>
+            </ul>
+
+            <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+              <span>Relatórios salvos</span>
+              <a class="d-flex align-items-center text-muted" href="#">
+                <span data-feather="save"></span>
+              </a>
+            </h6>
+            <ul class="nav flex-column mb-2">
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span data-feather="file-text"></span>
+                  Essa Semana
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span data-feather="file-text"></span>
+                  Neste mês
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span data-feather="file-text"></span>
+                  Último trimestre
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span data-feather="file-text"></span>
+                  Vendas do final de ano
+                </a>
+              </li>
+            </ul>
+          </div>
+        </nav><!-- Fim Barra Navegação 
+====================================-->   
+
+
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+          <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+            <h1 class="h2">Controle de Vendas</h1>
+            <div class="btn-toolbar mb-2 mb-md-0">
+
+              <input class="btn btn-sm btn-outline-secondary" type="date" id="txt_consulta" id="tabela" name="consulta" aria-label="Search">
+                <!--<span data-feather="calendar"></span>
+                11/20/2018-->
+
+            </div>
+          </div>
+
+
+<!-- Inicio Barra de Situações
+====================================-->   
+
+          <div class="row row-count tile_count control-vendas">
+
+            <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
+              <span class="count_top"><i class="fa fa-shopping-cart"></i> Total Cadastrado</span>
+              <div class="count">90</div>
+              <span class="count_bottom">Última atualização</span>
+            </div>
+
+            <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
+              <span class="count_top"><i class="fa fa-money"></i> Pagamento</span>
+              <div class="count" style="color: #e83e3ed4;">75,56</div>
+              <span class="count_bottom"><i class="text-danger"><i class="fa fa-sort-desc"></i>-14% </i> Última atualização</span>
+            </div>
+            <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
+              <span class="count_top"><i class="fa fa-dollar"></i> Produtos Vendidos</span>
+              <div class="count">36</div>
+              <span class="count_bottom"><i class="gray"><i class="fa fa-sort-asc "></i>10% </i> Última atualização</span>
+            </div>
+
+            <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
+              <span class="count_top"><i class="fa fa-line-chart"></i> Saldo Semanal</span>
+              <div class="count green">265,56</div>
+              <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc "></i>2% </i> Última atualização</span>
+            </div>
+
+            <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
+              <span class="count_top"><i class="fa fa-area-chart"></i> Saldo Mensal</span>
+              <div class="count green">635,56</div>
+              <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc "></i>9% </i> Última atualização</span>
+            </div>
+
+            <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
+              <span class="count_top"><i class="fa fa-users"></i> Devedores</span>
+              <div class="count" style="color: #e83e3ed4;">6</div>
+              <span class="count_bottom"><i class="text-danger"><i class="fa fa-sort-desc "></i>9% </i> Última atualização</span>
+            </div>
+            
+        </div><!-- Inicio Barra de Situações
+======================================-->   
+
+
+<!-- Input Pesquisa Produtos
+====================================-->
+     <div class="form-group input-group">
+      <div class="form-inline my-2 my-lg-0 top_search input-group-addon input-group-btn">
+        <label>Pesquisar: </label>
+        <input type="text" name="consulta" class="form-control mr-sm" placeholder="Pesquisar..." id="txt_consulta" aria-label="Search">
+        <span class="input-group-btn">
+          <button class="btn btn-default" type="button">Go!</button>
+        </span>
+      </div>
+      </div><!-- Fim Input Pesquisa Produtos
+====================================-->
+
+    
+    <!-- Tabela de Produtos 
+====================================--->
+
+    <div class="card mb-3">
+        <div class="card-header">
+          <i class="fas fa-table"></i>
+          Produtos com Estoque Mínimo
+        </div>
+         <div class="card-body">
+           <div class="table-responsive">
+            <div class="maxWidth" id="tabela">
+              <table class="table table-striped projects table-sm table-edit" id="tabela">
+                <thead>
+                  <tr>
+                    <th style="width: 7%">Nº</th>
+                    <th >Produto:</th>
+                    <th >Unidade de Produção:</th>
+                    <th >Setor:</th>
+                    <th >Estoque:</th>
+                    <th >#Editar</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th>46566</th>
+                    <td>
+                      <a>Carne Bolvina</a>
+                      <br />
+                    </td>
+      
+                    <td class="project_progress">
+                      <a>Campus</a>
+                      <br />
+                      <small>IFbaiano Senhor do Bonfim</small>
+                    </td>
+                    <td class="project_progress">
+                      <a>Zootecnia II</a>
+                    </td>
+                    <td>
+                      <a class="text-danger">15</a>
+                      <br />
+                      <small>Restantes</small>
+                    </td>
+      
+                    <td class="right">
+                      <a href="alt-produto.html" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i> Editar </a>
+                    </td>
+                  </tr>
+      
+                   <tr>
+                    <th>46566</th>
+                    <td>
+                      <a>Carne Bolvina</a>
+                      <br />
+                    </td>
+      
+                    <td class="project_progress">
+                      <a>Campus</a>
+                      <br />
+                      <small>IFbaiano Senhor do Bonfim</small>
+                    </td>
+                    <td class="project_progress">
+                      <a>Zootecnia II</a>
+                    </td>
+                    <td>
+                      <a class="text-danger">11</a>
+                      <br />
+                      <small>Restantes</small>
+                    </td>
+      
+                    <td class="right">
+                      <a href="alt-produto.html" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i> Editar </a>
+                    </td>
+                  </tr>
+      
+                   <tr>
+                    <th>46566</th>
+                    <td>
+                      <a>Carne Bolvina</a>
+                      <br />
+                    </td>
+      
+                    <td class="project_progress">
+                      <a>Campus</a>
+                      <br />
+                      <small>IFbaiano Senhor do Bonfim</small>
+                    </td>
+                    <td class="project_progress">
+                      <a>Zootecnia II</a>
+                    </td>
+                    <td>
+                      <a class="text-danger">4</a>
+                      <br />
+                      <small>Restantes</small>
+                    </td>
+      
+                    <td class="right">
+                      <a href="alt-produto.html" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i> Editar </a>
+                    </td>
+                  </tr>
+      
+                   <tr>
+                    <th>46566</th>
+                    <td>
+                      <a>Carne Bolvina</a>
+                      <br />
+                    </td>
+      
+                    <td class="project_progress">
+                      <a>Campus</a>
+                      <br />
+                      <small>IFbaiano Senhor do Bonfim</small>
+                    </td>
+                    <td class="project_progress">
+                      <a>Zootecnia II</a>
+                    </td>
+                    <td>
+                      <a class="text-danger">5</a>
+                      <br />
+                      <small>Restantes</small>
+                    </td>
+      
+                    <td class="right">
+                      <a href="alt-produto.html" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i> Editar </a>
+                    </td>
+                  </tr>
+      
+                </tbody>
+               </table>
+              </div>
+            </div>
+            <div class="card-footer small text-muted">Última Atualização as 11:59 PM</div>
+          </div>
+        </div><!-- Fim Tabela 
+====================================--->
+
+
+
+<!-- Ínicio Tabela Financeira
+====================================--->
+
+<div class="card mb-3">
+  <div class="card-header">
+    <i class="fas fa-money"></i>
+    Tabela Financeira
+ </div>
+   <div class="card-body">
+     <div class="table-responsive">
+      <div class="maxWidth" id="tabela">
+
+         <table id="" class="table table-striped projects table-sm table-edit">
+
+            <thead>
+              <tr>
+                <th >Saldo Semanal</th>
+                <th >Saldo Mensal</th>
+                <th >Despesa Semanal</th>
+                <th >Despesa Mensal</th>
+                <th >Saldo Total</th>
+                <th width="40">Atualizar</th>
+            </thead>
+
+            <tbody  style="cursor:default;">
+              <tr>
+                <td >+165,56 R$</td>
+                <td >+396,78 R$</td>
+                <td style="color: red;" >-176,96 R$</td>
+                <td style="color: red;" >-256,89 R$</td>
+                <td class="font-weight-bold" style="color: #1ABB9C;">436,56 R$</td>
+                 <td><center>
+                <a href="" style="color:#08509e"><i class="fa fa-refresh" aria-hidden="true"></i></center>
+                </a>
+              </td>
+
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="card-footer small text-muted">Última Atualização as 11:59 PM</div>
+    </div>
+  </div> <!-- Fim Tabela Financeira 
+====================================--->
+
+<script>
+    $('input#txt_consulta').quicksearch('table#tabela tbody tr');
+</script>
+
+
+<!-- Ícones Navegação -->
+<script src="js/feather.js"></script>
+<script>
+  feather.replace()
+</script>
+
+    <!-- Principal JavaScript do Bootstrap
+    ================================================== -->
+    <!-- Foi colocado no final para a página carregar mais rápido -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/vendor/holder.min.js"></script>
+
+    <script>
+      var ctx = document.getElementById("myChart");
+      var myChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+          datasets: [{
+            data: [15339, 21345, 18483, 24003, 23489, 24092, 12034],
+            lineTension: 0,
+            backgroundColor: 'transparent',
+            borderColor: '#007bff',
+            borderWidth: 4,
+            pointBackgroundColor: '#007bff'
+          }]
+        },
+        options: {
+          scales: {
+            yAxes: [{
+              ticks: {
+                beginAtZero: false
+              }
+            }]
+          },
+          legend: {
+            display: false,
+          }
+        }
+      });
+    </script>
+  </body>
+</html>
+
+
+
+
+
